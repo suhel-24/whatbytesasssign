@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import {
   Award,
   BarChart,
@@ -26,9 +25,11 @@ import {
 import Skilltest from "@/components/home/Skilltest";
 import Dashboard from "@/components/home/Dashboard";
 import Internship from "@/components/home/Intership";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState("dashboard");
+  const [activeTab, setActiveTab] = useState("skill-test");
 
   const navItems = [
     { id: "dashboard", label: "Dashboard", icon: BarChart },
@@ -42,13 +43,15 @@ export default function Page() {
       <header className="border-b px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className="font-bold text-2xl flex items-center">
-            <a href="/" className="mr-2">
-              <img
+            <Link href="/" className="mr-2">
+              <Image
                 src="https://photos.wellfound.com/startups/i/10130633-833576a963b41d8946174d102bdc1200-medium_jpg.jpg?buster=1717832532"
                 alt="WhatBytes Logo"
+                width={100}
+                height={40}
                 className="h-10 w-auto"
               />
-            </a>
+            </Link>
             WhatBytes
           </div>
         </div>
